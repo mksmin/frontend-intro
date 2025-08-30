@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register</title>
+</head>
+<body>
+<h1>Register</h1>
+<!-- temp get, todo: post -->
+<form method="get">
+  <!-- username -->
+  <div>
+    <label for="full-name"
+    >Full Name</label>
+    <input
+      type="text"
+      id="full-name"
+      name="full_name"
+      placeholder="John Smith"
+      required
+    >
+  </div>
+  <div>
+    <label for="username"
+    >Username</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="john_smith"
+      minlength="3"
+      maxlength="32"
+      required
+      >
+  </div>
+  <div>
+    <label for="email"
+    >Email Address
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="john@smith.com"
+      required
+    >
+  </div>
+  <div>
+    <label for="password"
+    >Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+    >
+  </div>
+  <div>
+    <label for="male">Male</label>
+    <input
+      type="radio"
+      id="male"
+      name="sex"
+      value="male"
+      required
+    >
+    <label for="female">Female</label>
+    <input
+      type="radio"
+      id="female"
+      name="sex"
+      value="female"
+      required
+    >
+  </div>
+  <div>
+    <label for="accept-terms"
+    >I accept terms and conditions</label>
+    <input
+      type="checkbox"
+      name="terms"
+      id="accept-terms"
+      required
+    >
+  </div>
+  <div>
+    <label for="accept-newsletter">Subscribe to newsletter</label>
+    <input
+      type="checkbox"
+      name="newsletter"
+      id="accept-newsletter"
+    >
+  </div>
+  <div>
+    <label for="city"
+    >City</label>
+    <select name="city" id="city" required>
+      <option value="moscow">Moscow</option>
+      <option value="stpeter">St. Petersburg</option>
+      <option value="nizhnevartovsk">Nizhnevartovsk</option>
+    </select>
+  </div>
+  <div>
+    <label for="address">Address</label>
+    <textarea
+      name="address"
+      id="address"
+      cols="30"
+      rows="3"
+      placeholder="Ul. Pushkina, dom 1"
+      required
+    ></textarea>
+  </div>
+  <div>
+    <label for="birthday">Birth day</label>
+    <input
+      type="date"
+      id="birthday"
+      name="birthday"
+      required
+    >
+<!--    <input type="time">-->
+  </div>
+  <input type="submit" value="Register">
+</form>
+
+</body>
+</html>
