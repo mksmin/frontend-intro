@@ -136,8 +136,12 @@
   </div>
   <button
     type="button"
-    onclick="handleClick()"
-  >Click</button>
+    id="click-button"
+  >Click</button>'
+  <button
+    type="button"
+    id="reset-button"
+  >Reset</button>
 </div>
 
 <footer>
@@ -159,12 +163,20 @@
 </script>
 
 <script>
+  const clickButton = document.getElementById('click-button');
+  const clickResetButton = document.getElementById('reset-button');
   const clickCountResult = document.getElementById('click-count');
   let clickCount = 0;
   function handleClick() {
     clickCount += 1;
     clickCountResult.innerText = clickCount;
   }
+  function handleReset() {
+    clickCount = 0;
+    clickCountResult.innerText = clickCount;
+  }
+  clickButton.addEventListener('click', handleClick);
+  clickResetButton.addEventListener('click', handleReset);
 </script>
 
 </body>
