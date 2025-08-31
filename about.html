@@ -129,6 +129,17 @@
   </div>
 </main>
 
+<div>
+  <h2>Clicker game</h2>
+  <div>
+    Clicks count: <span id="click-count">0</span>
+  </div>
+  <button
+    type="button"
+    onclick="handleClick()"
+  >Click</button>
+</div>
+
 <footer>
   &copy; Max, <span id="year">2024</span>
 </footer>
@@ -145,6 +156,15 @@
 <script>
   const yearSpan = document.getElementById('year');
   yearSpan.innerText = (new Date()).getFullYear().toString();
+</script>
+
+<script>
+  const clickCountResult = document.getElementById('click-count');
+  let clickCount = 0;
+  function handleClick() {
+    clickCount += 1;
+    clickCountResult.innerText = clickCount;
+  }
 </script>
 
 </body>
