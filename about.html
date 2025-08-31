@@ -132,5 +132,14 @@
 <footer>
   &copy; Max, 2025
 </footer>
+
+<script>
+  const quotes = Array.from(document.querySelectorAll('.quote'));
+  let count = 0;
+  quotes.forEach((quote) => {
+    count += 1;
+    quote.innerText = count + '. ' + quote.innerText;
+  })
+</script>
 </body>
 </html>
