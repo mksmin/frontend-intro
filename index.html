@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  >
+  <style>
+    .avatar {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>This page is about Me</h1>
+  </header>
+  <main>
+    <img
+      class="rounded-circle avatar shadow"
+      src="https://www.hibiny.ru/images/news/2025/426923/ff8e7db4acf1431fc29f19051c055dea.webp"
+      alt="Cat photo"
+    >
+
+    <div>
+      <h2> My lists </h2>
+
+      <div>
+        <h3> My favorite frameworks </h3>
+        <ul class="list-group">
+          <li class="list-group-item"> SQLalchemy</li>
+          <li class="list-group-item"> FastAPI</li>
+          <li class="list-group-item"> NumPy</li>
+        </ul>
+        <p>I love them all equally (nope)</p>
+      </div>
+      <div>
+        <h3> My main programming languages </h3>
+        <ol class="list-group list-group-numbered">
+          <li class="list-group-item">Python</li>
+          <li class="list-group-item">
+            <del>JavaScript</del>
+          </li>
+        </ol>
+      </div>
+      <div>
+        <h3>Definitions: </h3>
+        <dl>
+          <dt><strong>HTML</strong></dt>
+          <dd>HyperText <em>Markup</em> Language</dd>
+          <dt><strong>Python</strong></dt>
+          <dd>General purpose <i>programming</i> language</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="quotes">
+      <h2> My favorite colors </h2>
+      <figure class="text-center">
+        <blockquote class="blockquote">
+          <p>"Hello World!"</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          Noname author
+        </figcaption>
+      </figure>
+      <figure class="text-center">
+        <blockquote class="blockquote">
+          <p> "Неважно, кто ты нах.., важно то, что ты нах... Ва... неважно кто ты нах... ы... Ва... Ия ы... Нах.. Ты..
+            Ия
+            ы.. Не важно нах.. Ты понял нах..?" - </p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+          Неизвестный <cite title="Source Title">гений</cite>
+        </figcaption>
+      </figure>
+
+
+    </div>
+
+    <div>
+      <h2> My resources </h2>
+      <ul>
+        <li>
+          <a
+            href="http://t.me/mininwork"
+            target="_blank"
+          >Telegram</a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/mksmin"
+            target="_blank"
+          >GitHub</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <div>
+    <h2>Clicker game</h2>
+    <div class="my-2">
+      Clicks count: <span
+      id="click-count"
+      class="badge text-bg-dark p-2 font-weight-bold fs-6"
+    >0</span>
+    </div>
+    <button
+      type="button"
+      id="click-button"
+      class="btn btn-outline-primary"
+    >Click
+    </button>
+    '
+    <button
+      type="button"
+      id="reset-button"
+      class="btn btn-outline-warning"
+    >Reset
+    </button>
+  </div>
+
+  <footer class="mt-4">
+    &copy; Max, <span id="year">2024</span>
+  </footer>
+
+  <script>
+    const quotes = Array.from(document.querySelectorAll('.quote'));
+    let count = 0;
+    quotes.forEach((quote) => {
+      count += 1;
+      quote.innerText = count + '. ' + quote.innerText;
+    })
+  </script>
+
+  <script>
+    const yearSpan = document.getElementById('year');
+    yearSpan.innerText = (new Date()).getFullYear().toString();
+  </script>
+
+  <script>
+    const clickButton = document.getElementById('click-button');
+    const clickResetButton = document.getElementById('reset-button');
+    const clickCountResult = document.getElementById('click-count');
+    let clickCount = 0;
+    function handleClick() {
+      clickCount += 1;
+      clickCountResult.innerText = clickCount;
+    }
+    function handleReset() {
+      clickCount = 0;
+      clickCountResult.innerText = clickCount;
+    }
+    clickButton.addEventListener('click', handleClick);
+    clickResetButton.addEventListener('click', handleReset);
+  </script>
+</div>
+</body>
+</html>
