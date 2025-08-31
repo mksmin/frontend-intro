@@ -20,7 +20,6 @@
       background-color: #b1e2a9;
       padding: 2px 4px;
       margin: auto;
-      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
       border-radius: 5px;
     }
     header > h1 {
@@ -29,16 +28,40 @@
     img {
       margin: 20px 0;
     }
+    img.avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .shadow {
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    .quotes {
+    /*      background-color: #cacaca;*/
+      margin-top: 20px 0;
+      padding: 8px 1px;
+    }
+    .quotes > h2 {
+      margin: 5px 0;
+    }
+    .quote {
+      font-style: italic;
+      border-left: 5px solid #51a441;
+      margin-left: 5px;
+      padding-left: 10px;
+    }
   </style>
 
 </head>
 
 <body>
-<header>
+<header class="shadow">
   <h1>This page is about Me</h1>
 </header>
 <main>
   <img
+    class="avatar shadow"
     src="https://www.hibiny.ru/images/news/2025/426923/ff8e7db4acf1431fc29f19051c055dea.webp"
     width="60%"
     alt="Cat photo"
@@ -74,6 +97,18 @@
         <dd>General purpose <i>programming</i> language</dd>
       </dl>
     </div>
+  </div>
+
+  <div class="quotes">
+    <h2> My favorite colors </h2>
+    <p class="quote">
+      "Hello World!"
+    </p>
+    <p class="quote">
+      "Неважно, кто ты нах.., важно то, что ты нах... Ва... неважно кто ты нах... ы... Ва... Ия ы... Нах.. Ты.. Ия
+      ы.. Не важно нах.. Ты понял нах..?" - Неизвестный гений
+    </p>
+
   </div>
 
   <div>
