@@ -87,16 +87,28 @@
 
       <div>
         <h3> My favorite frameworks </h3>
-        <ul class="list-group">
+        <input
+          id="search-favourite-frameworks"
+          class="form-control my-2"
+          type="search"
+          placeholder="Search for frameworks..."
+          aria-label="Search for frameworks"
+        >
+
+        <ul class="list-group"
+            id="favourite-frameworks-list">
           <li
             class="list-group-item"
             data-bs-toggle="tooltip"
             data-bs-placement="top"
             data-bs-title="The best ORM on Python"
-          > SQLalchemy
+          >SQLalchemy
           </li>
-          <li class="list-group-item"> FastAPI</li>
-          <li class="list-group-item"> NumPy</li>
+          <li class="list-group-item">FastAPI</li>
+          <li class="list-group-item">NumPy</li>
+          <li class="list-group-item">Aiogram</li>
+          <li class="list-group-item">Django</li>
+          <li class="list-group-item">Pandas</li>
         </ul>
         <p>I love them all equally (nope)</p>
       </div>
@@ -119,7 +131,7 @@
                data-bs-trigger="focus"
                data-bs-title="JavaScript"
                data-bs-content="Mostly used in browsers.">
-            <del>JavaScript</del>
+              <del>JavaScript</del>
             </a>
           </li>
         </ol>
@@ -287,6 +299,25 @@
     }
     clickButton.addEventListener('click', handleClick);
     clickResetButton.addEventListener('click', handleReset);
+  </script>
+
+  <script>
+    const searchInput = document.getElementById('search-favourite-frameworks')
+    const frameworksList = document.getElementById('favourite-frameworks-list')
+
+    function handleSearch() {
+      console.log('New search:', [searchInput.value]);
+      const searchValue = searchInput.value.toLowerCase();
+      [...frameworksList.getElementsByTagName('li')].forEach((item) => {
+        if (item.innerText.toLowerCase().includes(searchValue)) {
+          item.classList.remove('d-none');
+        } else {
+          item.classList.add('d-none');
+        }
+      })
+    }
+    searchInput.addEventListener('keyup', handleSearch);
+    searchInput.addEventListener('search', handleSearch);
   </script>
 </div>
 
