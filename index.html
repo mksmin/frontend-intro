@@ -36,10 +36,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link"  href="#">Home</a>
+          <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  href="#quotes">Quotes</a>
+          <a class="nav-link" href="#quotes">Quotes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://t.me/mininwork" target="_blank">Telegram</a>
@@ -88,7 +88,13 @@
       <div>
         <h3> My favorite frameworks </h3>
         <ul class="list-group">
-          <li class="list-group-item"> SQLalchemy</li>
+          <li
+            class="list-group-item"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="The best ORM on Python"
+          > SQLalchemy
+          </li>
           <li class="list-group-item"> FastAPI</li>
           <li class="list-group-item"> NumPy</li>
         </ul>
@@ -97,9 +103,24 @@
       <div>
         <h3> My main programming languages </h3>
         <ol class="list-group list-group-numbered">
-          <li class="list-group-item">Python</li>
+          <li
+            role="button"
+            class="list-group-item"
+            data-bs-container="body"
+            data-bs-toggle="popover"
+            data-bs-placement="top"
+            data-bs-content="General purpose language. Used in web development "
+          >Python
+          </li>
           <li class="list-group-item">
+            <a tabindex="0"
+               role="button"
+               data-bs-toggle="popover"
+               data-bs-trigger="focus"
+               data-bs-title="JavaScript"
+               data-bs-content="Mostly used in browsers.">
             <del>JavaScript</del>
+            </a>
           </li>
         </ol>
       </div>
@@ -194,7 +215,6 @@
       </div>
 
 
-
     </div>
     <div class="row my-3">
       <div class="col">
@@ -270,8 +290,17 @@
   </script>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+  const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+</script>
 
 </body>
 </html>
