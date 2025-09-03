@@ -93,8 +93,14 @@
           type="search"
           placeholder="Search for frameworks..."
           aria-label="Search for frameworks"
+          disabled
         >
-
+        <noscript>
+          <div class="alert alert-info" role="alert">
+            <h5 class="alert-heading"> Interactive search does not work without JavaScript.</h5>
+            Please enable JavaScript and reload the page to use this feature.
+          </div>
+        </noscript>
         <ul class="list-group"
             id="favourite-frameworks-list">
           <li
@@ -304,6 +310,8 @@
   <script>
     const searchInput = document.getElementById('search-favourite-frameworks')
     const frameworksList = document.getElementById('favourite-frameworks-list')
+
+    searchInput.disabled = false;
 
     function handleSearch() {
       console.log('New search:', [searchInput.value]);
